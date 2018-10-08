@@ -1,0 +1,2 @@
+webpackJsonp([0],{TOfd:function(o,n,i){"use strict";var a="http://a.app.qq.com/o/simple.jsp?pkgname=com.qian.xiao.er",e="qianxiaoer://launch";n.a={open:function(){window.location.href=e,setTimeout(function(){window.location.href=a},1e3)},download:function(){window.location.href=a}}}});
+//# sourceMappingURL=0.101f1ead47d473984f98.js.map

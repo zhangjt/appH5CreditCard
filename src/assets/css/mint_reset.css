@@ -1,0 +1,336 @@
+img {
+  /* 图片兼容性处理 */
+  content: normal !important;
+}
+html ,body {
+  /* 会影响我的返利悬浮效果，所以注释掉 */
+  /* overflow: scroll;
+  overflow-x: hidden; */
+  /* 会影响财喵宝箱悬浮头部 消息列表头部 */
+   /* -webkit-overflow-scrolling: touch; */
+    user-select: none;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "dinm";
+  src: url("/static/font/DINMittelschrift.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+a{
+  text-decoration: none;
+}
+#app {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+.main-container{
+  margin-top: 43px;
+}
+/*重写mint部分样式*/
+.mint-header {
+  background-color: #fff;
+  color: #092126;
+  height: 44px;
+  & .mintui {
+    font-size: 19px;
+  }
+}
+.mint-header.is-fixed{
+  z-index: 10!important;
+}
+.mint-header .mint-button {
+  font-size: 14px;
+}
+.mint-header-title {
+  font-size: 16px;
+  line-height: 1.2;
+}
+.mintui {
+  font-size: 16px;
+}
+.mint-toast {
+  z-index: 9999;
+}
+.home .mint-header-title {
+  font-size: 18px;
+}
+.mint-cell-wrapper {
+  font-size: 16px;
+  background-image: linear-gradient(
+    180deg,
+    #e6e6e6,
+    #e6e6e6 50%,
+    transparent 50%
+  );
+  background-position: left bottom;
+  & .mint-field-other {
+    font-size: 14px;
+  }
+}
+.mint-cell:first-child .mint-cell-wrapper {
+  background-origin: content-box;
+}
+.mint-cell {
+  min-height: 44px;
+}
+.mint-checklist {
+  width: 30px;
+  & .mint-cell-wrapper {
+    background-image: none;
+    padding-left: 0;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+}
+.mint-checkbox-input:checked + .mint-checkbox-core {
+  background-color: #5173d7;
+  border-color: #5173d7;
+}
+.mint-checkbox-core {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  &:after {
+    top: 0;
+    left: 4px;
+    content: " ";
+  }
+}
+.mint-checklist-label {
+  padding: 0;
+}
+::-webkit-input-placeholder {
+  color: #959595;
+  font-size: 15px;
+}
+.boder-header {
+  background-image: linear-gradient(
+    180deg,
+    #d9d9d9,
+    #d9d9d9 50%,
+    transparent 50%
+  );
+  background-size: 120% 1px;
+  background-repeat: no-repeat;
+  background-position: -10px bottom;
+  background-origin: content-box;
+}
+.common-btn {
+  background-color: #FF683F;
+  color: #fff;
+  border-color: #FF683F;
+  box-shadow: none;
+  height: 44px;
+  font-size: 15px;
+  padding: 0 15px;
+  &.blue {
+    background-color: #4477dd;
+  }
+}
+.btn-module {
+  display: block;
+  & .btn-margin {
+    margin: 20px 20px 15px;
+  }
+  & .common-btn {
+    display: block;
+    width: 100%;
+  }
+  & .mint-cell-wrapper {
+    width: 22px;
+  }
+}
+.get-captcha {
+  color: #FF683F;
+  border: 1px solid #FF683F;
+  width: 110px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 4px;
+}
+.captcha-img {
+  width: 110px;
+  height: 32px;
+}
+.login-form {
+  margin: 10px 8%;
+  & > .mint-cell {
+    margin-top: 30px;
+  }
+  & .mint-cell-wrapper {
+    padding: 0;
+  }
+  & .mint-cell:last-child {
+    background-image: none;
+  }
+  & .mint-field.is-nolabel .mint-cell-title {
+    position: relative;
+    display: inherit;
+    width: 30px;
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    margin: 0 10px;
+    color: #100c29;
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 2px;
+      width: 1px;
+      height: 15px;
+      content: "";
+      background-color: #e8e8e8;
+    }
+  }
+  & .phone .mint-cell-title {
+   
+    &:before {
+      color: #FF683F;
+      content: "\e604";
+    }
+  }
+  & .imgCaptcha .mint-cell-title {
+    &:before {
+      color: #FF683F;
+      content: "\e9e6";
+    }
+  }
+  & .msgCaptcha .mint-cell-title {
+    &:before {
+      color: #FF683F;
+      content: "\e62d";
+    }
+  }
+  & .password .mint-cell-title {
+    &:before {
+      color: #FF683F;
+      content: "\e603";
+    }
+  }
+}
+.forget .mint-cell-wrapper {
+  height: 70px;
+  padding-right: 20px;
+}
+
+
+.warnmessWrap {
+  & .warnmess{
+    padding-bottom: 100px;
+    margin: 20px;
+  }
+  & .button{
+    padding:10px 0px 0;
+    position: fixed;
+    bottom:0px;
+    background: #fff;
+    & .mint-checklist{
+      margin: 0 20px;
+      color: #6b3ae3;
+      width:auto;
+      & .mint-cell-wrapper{
+        padding:0;
+        & .mint-checklist-label{
+          padding:0;
+          & .mint-checkbox-label{
+            font-size: 14px;
+          }
+        }
+
+      }
+
+
+    }
+    & .mint-button--normal{
+      width:100%;
+    }
+    & .mint-button--primary {
+
+        color: #fff;
+        background: #6B3AE3;
+    }
+  }
+
+}
+.rebate-login{
+  & .login-form>*:nth-last-of-type(1) .mint-cell-wrapper{
+    border: 0;
+  }
+  & .login-form>*:nth-last-of-type(1) .mint-cell-right{
+    opacity: 0;
+    border: 0;
+  }
+
+  & .common-btn {
+      background: none;
+      border-radius: initial;
+      color:#666;
+  }
+  & .common-btn:nth-last-of-type(1) {
+   /* color:#666;*/
+    border-bottom: 0;
+    border-radius: initial;
+  }
+  & button.common-btn{
+    color: #4a90e2;
+  }
+  & .btn-margin{
+    & .common-btn{
+      border-right:1px solid #eee;
+    }
+  }
+}
+.swiper-container{
+  z-index: 0;
+}
+
+/*信用卡和贷超-start*/
+
+/*bankbanner*/
+.bank-banner {
+  background-color: none;
+  & .swiper-container {
+    & .swiper-pagination {
+      & .swiper-pagination-bullet {
+        width: 10px;
+        height: 5px;
+        background-color: #6b3ae3;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+.border-bottom {
+  background-image: linear-gradient(
+    180deg,
+    #e6e6e6,
+    #e6e6e6 50%,
+    transparent 50%
+  );
+  background-repeat: no-repeat;
+  background-size: 120% 1px;
+  background-position: 0 100%;
+}
+.border-right {
+  background-image: linear-gradient(
+    90deg,
+    #e6e6e6,
+    #e6e6e6 50%,
+    transparent 50%
+  );
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  background-position: right top;
+}
+.single-image img {
+  vertical-align: middle;
+}
+/*信用卡和贷超-end*/
