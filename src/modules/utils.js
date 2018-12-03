@@ -10,7 +10,7 @@ class Utils {
    * @returns
    * @memberof Utils
    */
-  formatTime (timestamp, format, fillDate = true, fillTime = true) {
+  formatTime(timestamp, format, fillDate = true, fillTime = true) {
     var time = new Date(timestamp)
     var year = time.getFullYear()
     var month = time.getMonth() + 1
@@ -37,13 +37,13 @@ class Utils {
    * @returns
    * @memberof Utils
    */
-  getUrlParam (name) {
+  getUrlParam(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
     var r = window.location.search.substr(1).match(reg)
     if (r != null) return unescape(r[2])
     return null
   }
-  removeUrlParam (url, name) {
+  removeUrlParam(url, name) {
     if (url.indexOf(name) === -1) return url
     var urlArr = url.split('?')
     var urlBase = urlArr[0]
@@ -67,23 +67,26 @@ class Utils {
   }
 
   // 循环每n次归类
-  recalObject (json, n) {
+  recalObject(json, n) {
+
+    if (!json) { return }
     let l = json // 标准json对象
+    // 清除空对象
+    for (let j = 0; j < l.length; j++) {
+      if (JSON.stringify(l[j]) === '{}') {
+        l.splice(j, 1)
+        j--
+      }
+    }
     let big = []
     let num = Math.ceil(l.length / n)
     if (l.length >= 1) {
-      for (var x = 1; x < (num + 1); x++) {
+      for (let x = 1; x < (num + 1); x++) {
         let small = []
-        for (var i = n * (x - 1); i < (n * x); i++) {
+        for (let i = n * (x - 1); i < (n * x); i++) {
           small.push(l[i])
         }
-        // 清除空对象
-        for (let i = 0; i < small.length; i++) {
-          if (typeof small[i] === 'undefined') {
-            small.splice(i, 1)
-            i--
-          }
-        }
+
         big.push({
           'list': small
         })
@@ -92,7 +95,7 @@ class Utils {
     return big
   }
 
-  getQuery (params) {
+  getQuery(params) {
     let str = location.search
     let query = str.split(params + '=').slice(-1).join('')
     query = decodeURIComponent(query)
@@ -100,16 +103,16 @@ class Utils {
   }
 
   // 判断iPhoneX
-  isIphoneX () {
+  isIphoneX() {
     return /iphonex/gi.test(navigator.userAgent)
   }
 
-  formalTitle (value) {
+  formalTitle(value) {
     document.title = value
   }
 
   // 获取url参数
-  getUrlParam (e, url) {
+  getUrlParam(e, url) {
     var t = new RegExp('(^|&)' + e + '=([^&]*)(&|$)')
     var r = ''
     if (url) {
