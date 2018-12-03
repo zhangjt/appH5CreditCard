@@ -24,7 +24,7 @@
     </div>
     <div class="item-container-3">
       <div class="tips-style">{{app_name}}</div>
-      <div class="tips-style">Copyright © 2017-2018 caimiaowanka.com</div>
+      <div class="tips-style">Copyright © 2017-2018 xxxwanka.com</div>
     </div>
     <common-dialog :dialogVisable="isShow" :title="title" :rightText.sync="rightText" :leftText.sync="leftText"
                    @defaultClick="dismissDialog" :dialogVisable.sync="isShow" :confrimType.sync="dialogConfirmType"
