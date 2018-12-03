@@ -9,12 +9,12 @@ import wanka from './wanka'
 fly.config.headers = { 'content-type': 'application/json' }
 fly.config.timeout = 10000
 let h = location.hostname
-if (h === 'm.caimiaowanka.com' || h === 'www.caimiaowanka.com' || h === 'h5.caimiaowanka.com') {
-  // fly.config.baseURL = 'https://prod.wdjzt88.com'
-  fly.config.baseURL = 'https://carta.caimiaowanka.com'
+if (h === 'm.xxxwanka.com' || h === 'www.xxxwanka.com' || h === 'h5.xxxwanka.com') {
+  // fly.config.baseURL = 'https://prod.aaa88.com'
+  fly.config.baseURL = 'https://carta.xxxwanka.com'
 } else {
-  fly.config.baseURL = 'http://carta.caimiaoxingqiu.com'
-  // fly.config.baseURL = 'http://dev.wdjzt88.com'
+  fly.config.baseURL = 'http://carta.xxxxingqiu.com'
+  // fly.config.baseURL = 'http://dev.aaa88.com'
 }
 
 /**
@@ -33,7 +33,7 @@ class Http {
           'channel': 'sqtes',
           'clientModel': 'OPPO R11s',
           'device_type': 'Android',
-          'packageName': 'com.caimiao.wanka',
+          'packageName': 'com.xxx.wanka',
           'uuid': this.getUUId()
         }
       },
